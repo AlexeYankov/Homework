@@ -1,33 +1,29 @@
 import React from 'react'
+import {TaskType} from "../../p1-main/m1-ui/u1-app/App"
 
-const messageData = {
-    avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
-    name: 'Some Name',
-    message: 'some text',
-    time: '22:00',
+type messageData = {
+  tasks: TaskType
 }
 
-function HW1() {
+const HW1 = (props: messageData) => {
     return (
         <div>
             <hr/>
-            homeworks 1
-
+            {/*homeworks 1*/}
             {/*should work (должно работать)*/}
 
-            {/*<Message*/}
-            {/*    avatar={messageData.avatar}*/}
-            {/*    name={messageData.name}*/}
-            {/*    message={messageData.message}*/}
-            {/*    time={messageData.time}*/}
+
+            avatar={props.tasks.avatar}
+            name={props.tasks.name}
+            message={props.tasks.message}
+            time={props.tasks.time}
             {/*/>*/}
 
-            <hr/>
+            {/*<hr/>*/}
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeMessage/>*/}
             <hr/>
         </div>
-    )
-}
-
-export default HW1
+    );
+};
+export default HW1;
