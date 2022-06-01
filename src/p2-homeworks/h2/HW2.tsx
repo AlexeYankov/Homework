@@ -51,11 +51,10 @@ function HW2() {
                 deleteAffairCallback={deleteAffairCallback}
                 filter={filter}
             />
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeAffairs/>*/}
-            <hr/>
+            {/*<hr/>*/}
+            {/*/!*для личного творчества, могу проверить*!/*/}
+            {/*/!*<AlternativeAffairs/>*!/*/}
+            {/*<hr/>*/}
         </div>
     )
 }

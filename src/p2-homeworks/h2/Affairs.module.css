@@ -1,3 +1,39 @@
-.someClass {
+.HW2 {
+    display: grid;
+    grid-template-areas:
+        "uTN uTP uDB";
+    grid-template-rows: 30px 1fr;
+    grid-template-columns: 5fr 8fr;
+    background-color: darkgreen;
+    width: 400px;
+}
+
+.userTaskName {
+    color: bisque;
+    margin-left: 5px;
+    grid-area: uTN;
+    margin: 5px 15px 5px 15px;
+    font-weight: bold;
+}
+.userTaskPriority {
+    margin-left: 20px;
+    grid-area: uTP;
+    margin: 5px 15px 5px 15px;
 
 }
+.userDeleteButton {
+    color: black;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    background-color: yellow;
+    grid-area: uDB;
+    margin: 5px 15px 5px 15px;
+    border-radius: 3px;
+}
+.filterTypesColor {
+    background-color: darkorange;
+    margin: 10px 0px 0px 5px;
+    border-radius: 6px;
+}
+
