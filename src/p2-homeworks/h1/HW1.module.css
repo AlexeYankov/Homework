@@ -4,11 +4,12 @@
         "uA uMCNR"
         "uA uN"
         "uA uMT"
+        "uA uTT"
         "uA uMCRR";
     grid-template-rows: 120px 1fr;
-    grid-template-columns: 1fr 12fr;
+    grid-template-columns: 2fr 12fr;
     background-color: darkgreen;
-    width: 600px;
+    width: 400px;
 }
 
 .userAvatar {
@@ -50,8 +51,8 @@
 
 .userMessageTextTime {
     grid-area: uTT;
-    margin: 0px;
-    padding-left: 90%;
+    margin-left: 80%;
+    /*padding-right: 5px;*/
 }
 
 .userMessageCorner {

@@ -1,11 +1,23 @@
 import React from 'react'
-import {TaskType} from "../../p1-main/m1-ui/u1-app/App"
+// import {TaskType} from "../../p1-main/m1-ui/u1-app/App"
 import styleCss from "./HW1.module.css";
 
 type messageData = {
     tasks: TaskType
 }
 
+export type TaskType = {
+    avatar: string
+    name: string
+    message: string
+    time: string
+}
+export const tasks: TaskType = {
+    avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
+    name: "Artem",
+    message: "npm start нажимал?",
+    time: '20:00'
+}
 const HW1 = (props: messageData) => {
     return (
         <div>
@@ -29,18 +41,18 @@ const HW1 = (props: messageData) => {
                     </div>
                 </div>
                 <div className={styleCss.userMessageCorner}>
-                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="21.95" height="22.0" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_d_2_8)">
-                            <path d="M4.73684 14C15.3474 14 18 4.66667 18 0V14H4.73684Z" fill="#043b04"/>
-                            <path d="M18 14V0C18 4.66667 15.3474 14 4.73684 14H18ZM18 14H4" stroke="#043b04"
-                                  stroke-width="0.1"/>
+                            <path d="M4.73684 14C14.3474 14 18 4.66667 18 0V14H4Z" fill="#043b04"/>
+                            <path d="M18 14V0C18 9.1 15.3474 14 9.73684 14H18ZM18 14H4" stroke="#043b04"
+                                  strokeWidth="0.1"/>
                         </g>
                         <defs>
-                            <filter id="filter0_d_2_8" x="0" y="0" width="22.05" height="22.05"
-                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <filter id="filter0_d_2_8" x="0" y="0" width="22" height="22"
+                                    filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                 <feColorMatrix in="SourceAlpha" type="matrix"
-                                               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                               values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 157 0" result="hardAlpha"/>
                                 <feOffset dy="4"/>
                                 <feGaussianBlur stdDeviation="2"/>
                                 <feComposite in2="hardAlpha" operator="out"/>
@@ -52,10 +64,10 @@ const HW1 = (props: messageData) => {
                     </svg>
                 </div>
             </div>
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<alternativemessage/>*/}
-            <hr/>
+            {/*<hr/>*/}
+            {/*/!*для личного творчества, могу проверить*!/*/}
+            {/*/!*<alternativemessage/>*!/*/}
+            {/*<hr/>*/}
         </div>
     );
 };
