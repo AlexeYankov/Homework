@@ -1,15 +1,13 @@
 import React, {Dispatch, SetStateAction} from 'react'
 import Affair from './Affair'
 import {AffairType, FilterType} from './HW2'
-import styleCss from "../h2/Affairs.module.css";
-import {inspect} from "util";
-import styles = module
+// import styleCss from "../h2/Affairs.module.css";
 
-type AffairsPropsType = { // need to fix any
+export type AffairsPropsType = { // need to fix any
     data: AffairType[]
-    setFilter: Dispatch<SetStateAction<FilterType>>
-    deleteAffairCallback: (_id: string) => void
     filter: FilterType
+    setFilter: (filter: FilterType) => void
+    deleteAffairCallback: (_id: string) => void
 }
 
 function Affairs(props: AffairsPropsType) {
@@ -22,25 +20,29 @@ function Affairs(props: AffairsPropsType) {
     ))
 
     const setAll = () => {
-        // props.data.filter(t => t.priority !== 'low' | 'middle' | 'high')
-    } // need to fix
+        props.setFilter ('all')
+    }
+    // need to fix
     const setHigh = () => {
-        props.setFilter('high')
+        props.setFilter ('high')
     }
+
     const setMiddle = () => {
-        props.setFilter('middle')
+        props.setFilter ('middle')
     }
+
     const setLow = () => {
-        props.setFilter('low')
+        props.setFilter ('low')
     }
 
     return (
         <div>
+
             {mappedAffairs}
-            <button onClick={setAll} className={styleCss.filterTypesColor}>All</button>
-            <button onClick={setHigh} className={styleCss.filterTypesColor}>High</button>
-            <button onClick={setMiddle} className={styleCss.filterTypesColor}>Middle</button>
-            <button onClick={setLow} className={styleCss.filterTypesColor}>Low</button>
+            <button onClick={setAll} className={props.filter === 'all' ? 'activeFilter' : 'nonActiveFilter'} >All</button>
+            <button onClick={setHigh} className={props.filter === 'high' ? 'activeFilter' : 'nonActiveFilter'}>High</button>
+            <button onClick={setMiddle} className={props.filter === 'middle' ? 'activeFilter' : 'nonActiveFilter'}>Middle</button>
+            <button onClick={setLow} className={props.filter === 'low' ? 'activeFilter' : 'nonActiveFilter'}>Low</button>
         </div>
     )
 }

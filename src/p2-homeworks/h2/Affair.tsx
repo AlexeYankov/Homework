@@ -1,5 +1,5 @@
 import React from 'react'
-import {AffairType, FilterType} from "./HW2";
+import {AffairType} from "./HW2";
 import styleCss from "./Affairs.module.css";
 
 type AffairPropsType = {
@@ -9,9 +9,9 @@ type AffairPropsType = {
 }
 
 function Affair(props: AffairPropsType) {
-    const deleteCallback = () => {
+    const deleteCallback = () =>
         props.deleteAffairCallback(props.affair._id)
-    }// need to fix
+    // need to fix
     return (
         <div className={styleCss.HW2}>
             <div className={styleCss.userTaskName}>{props.affair.name}</div>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Affairs from './Affairs'
+import Affairs, {AffairsPropsType} from './Affairs'
 import {v1} from "uuid";
 
 // types
@@ -23,11 +23,7 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 // pure helper functions
 export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any
     if (filter === 'all') return affairs
-    else if (filter === 'low') return affairs.filter(a=>a.priority === 'low')
-    else if (filter === 'middle') return affairs.filter(a=>a.priority === 'middle')
-    else if (filter === 'high') return affairs.filter(a=>a.priority === 'high')
-    else {}
-    return []// need to fix
+    else return affairs.filter(t => t.priority === filter)
 }
 export const deleteAffair = (affairs: AffairType[], _id: string): AffairType[] => { // need to fix any
     return affairs.filter(t => t._id !== _id) // need to fix
@@ -43,13 +39,12 @@ function HW2() {
         <div>
             <hr/>
             homeworks 2
-
-            should work (должно работать)
             <Affairs
                 data={filteredAffairs}
+                filter={filter}
                 setFilter={setFilter}
                 deleteAffairCallback={deleteAffairCallback}
-                filter={filter}
+
             />
             {/*<hr/>*/}
             {/*/!*для личного творчества, могу проверить*!/*/}
