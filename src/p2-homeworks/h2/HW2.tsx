@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Affairs, {AffairsPropsType} from './Affairs'
+import Affairs from './Affairs'
 import {v1} from "uuid";
 
 // types

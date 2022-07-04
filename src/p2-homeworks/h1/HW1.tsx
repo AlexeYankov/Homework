@@ -1,6 +1,4 @@
 import React from 'react'
-// import {TaskType} from "../../p1-main/m1-ui/u1-app/App"
-import styleCss from "./HW1.module.css";
 import Message from "./Message";
 
 

@@ -6,18 +6,21 @@ import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
 function HW4() {
     const [text, setText] = useState<string>('')
-    const error = text ? '' : 'error'
-
+    const error = text ? '' : 'Please, enter some text'
     const showAlert = () => {
         if (error) {
-            alert('введите текст...')
+            alert('text is not entered')
+
         } else {
-            alert(text) // если нет ошибки показать текст
+            alert(text)
+            setText('')// если нет ошибки показать текст
         }
     }
+    let [checked, setChecked] = useState<boolean>(false)
+    const testOnChange = (e: ChangeEvent<HTMLInputElement>) => {
 
-    const [checked, setChecked] = useState<boolean>(false)
-    const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
+    }
+
 
     return (
         <div>
@@ -31,11 +34,12 @@ function HW4() {
                     onEnter={showAlert}
                     error={error}
                     // spanClassName={s.testSpanError}
-                />
 
+                />
                 <SuperInputText
                     className={s.blue} // проверьте, рабоет ли смешивание классов
                 />
+
 
                 {/*----------------------------------------------------*/}
 
@@ -59,6 +63,7 @@ function HW4() {
                 <SuperCheckbox
                     checked={checked}
                     onChangeChecked={setChecked}
+
                 >
                     some text {/*// этот текст попадёт в children*/}
                 </SuperCheckbox>
@@ -67,12 +72,6 @@ function HW4() {
                 <SuperCheckbox checked={checked} onChange={testOnChange}/>
             </div>
 
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperInputText/>*/}
-            {/*<AlternativeSuperButton/>*/}
-            {/*<AlternativeSuperCheckbox/>*/}
-            <hr/>
         </div>
     )
 }

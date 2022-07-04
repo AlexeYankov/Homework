@@ -11,13 +11,12 @@ export type UserType = {
 // уровень работы с глобальными данными
 function HW3() {
     const [users, setUsers] = useState<UserType[]>([]) // need to fix any
-
     const addUserCallback = (name: string) => {
         const user = {
             _id: v1(),
             name,
         }// need to fix any
-        setUsers([...users, user]) // need to fix
+        setUsers([...users, user])
     }
 
     return (
@@ -31,7 +30,6 @@ function HW3() {
             {/*<hr/>*/}
             {/*/!*для личного творчества, могу проверить*!/*/}
             {/*/!*<AlternativeGreeting/>*!/*/}
-            {/*<hr/>*/}
         </div>
     )
 }
