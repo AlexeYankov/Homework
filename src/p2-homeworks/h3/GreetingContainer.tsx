@@ -23,7 +23,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             setError('')
         } else {
             setName('')
-            setError('Name is required')
+            setError('Title is required')
         }
 
     }

@@ -27,8 +27,8 @@ const Greeting: React.FC<GreetingPropsType> = (
                     onKeyDown={onEnter}
                     onBlur={setNameCallback}
                 />
-                <div className={inputClass}>{error}</div>
             </div>
+            {error && <div>{error}</div>}
             <SuperButton onClick={addUser} disabled={!name}>add</SuperButton>
 
             <div>{totalUsers}</div>

@@ -1,6 +1,7 @@
-.count {
+.superInput {
+    background-color: blue;
 }
 
-.error {
-
+.errorInput {
+    background-color: red;
 }
