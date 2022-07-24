@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Homework/static/css/main.e179f39b.chunk.css",
+    "main.js": "/Homework/static/js/main.143eeebe.chunk.js",
+    "main.js.map": "/Homework/static/js/main.143eeebe.chunk.js.map",
+    "runtime-main.js": "/Homework/static/js/runtime-main.4d605882.js",
+    "runtime-main.js.map": "/Homework/static/js/runtime-main.4d605882.js.map",
+    "static/js/2.9436958f.chunk.js": "/Homework/static/js/2.9436958f.chunk.js",
+    "static/js/2.9436958f.chunk.js.map": "/Homework/static/js/2.9436958f.chunk.js.map",
+    "index.html": "/Homework/index.html",
+    "precache-manifest.50bb75bc27afc8b41ffe801c318c08e6.js": "/Homework/precache-manifest.50bb75bc27afc8b41ffe801c318c08e6.js",
+    "service-worker.js": "/Homework/service-worker.js",
+    "static/css/main.e179f39b.chunk.css.map": "/Homework/static/css/main.e179f39b.chunk.css.map",
+    "static/js/2.9436958f.chunk.js.LICENSE.txt": "/Homework/static/js/2.9436958f.chunk.js.LICENSE.txt",
+    "static/media/App.module.css": "/Homework/static/media/SpacePhoto1.93395709.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4d605882.js",
+    "static/js/2.9436958f.chunk.js",
+    "static/css/main.e179f39b.chunk.css",
+    "static/js/main.143eeebe.chunk.js"
+  ]
+}
