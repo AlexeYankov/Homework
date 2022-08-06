@@ -1,13 +1,15 @@
 import React from 'react'
 import Header from './Header'
-import Router from './Routes'
+import Pages from './Pages'
 
 function HW5() {
     return (
         <div>
+
             <Header/>
 
-            <Router/>
+            <Pages/>
+
         </div>
     )
 }

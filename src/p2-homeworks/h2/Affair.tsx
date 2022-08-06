@@ -16,8 +16,8 @@ function Affair(props: AffairPropsType) {
     return (
         <div className={styleCss.HW2}>
             <div className={styleCss.userTaskName}>{props.affair.name}</div>
-            <div className={styleCss.userTaskPriority}>[{props.affair.priority}]</div>
-            <div style={{padding: '3px'}} ><SuperButton style={{width: '25px'}} onClick={deleteCallback} red>x</SuperButton></div>
+            <div className={styleCss.userTaskPriority}>{props.affair.priority}</div>
+            <div style={{marginRight: '5px'}} ><SuperButton onClick={deleteCallback} red>x</SuperButton></div>
         </div>
     )
 }

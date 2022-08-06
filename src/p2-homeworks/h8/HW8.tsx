@@ -1,10 +1,16 @@
-import React, {useState} from 'react'
-import {homeWorkReducer} from './bll/homeWorkReducer'
+import React, {useReducer, useState} from 'react'
+import s from '../../p1-main/m1-ui/u1-app/App.module.css'
+import {checkAgeAC, homeWorkReducer, sortDownAC, sortUpAC} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import r from '../h4/common/c2-SuperButton/SuperButton.module.css'
 
-// export type UserType =
+export type UserDataType = {
+    _id: number,
+    name: string,
+    age: number
+}
 
-const initialPeople = [
+let initialPeople = [
     {_id: 0, name: 'Кот', age: 3},
     {_id: 1, name: 'Александр', age: 66},
     {_id: 2, name: 'Коля', age: 16},
@@ -14,35 +20,56 @@ const initialPeople = [
 ]
 
 function HW8() {
-    const [people, setPeople] = useState<any>(initialPeople) // need to fix any
-
-    // need to fix any
-    const finalPeople = people.map((p: any) => (
+    const [styleState, setStyle] = useState('')
+    const [people, dispatchPeople] = useReducer(homeWorkReducer, initialPeople) // need to fix any
+    const finalPeople = people.map((p: UserDataType) => (
         <div key={p._id}>
-            some name, age
+            <span className={s.HW8Name}>{p.name}</span>
+            <span className={s.HW8Age}>{p.age}</span>
         </div>
     ))
 
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
+    const sortUp = () => {
+        dispatchPeople(sortUpAC())
+        setStyle('sort Up')
+    }
+    const sortDown = () => {
+        dispatchPeople(sortDownAC())
+        setStyle('sort Down')
+    }
+    const checkOnAge = () => {
+        dispatchPeople(checkAgeAC())
+        setStyle('sort Age')
+    }
+
+    const styleCheckerSortUp = styleState === 'sort Up' ? r.activeFilter : ''
+    const styleCheckerSortDown = styleState === 'sort Down' ? r.activeFilter : ''
+    const styleCheckerSortAge = styleState === 'sort Age' ? r.activeFilter : ''
 
     return (
         <div>
-            <hr/>
-            homeworks 8
+            homework 8
 
             {/*should work (должно работать)*/}
-            {finalPeople}
+            <div className={s.HW8}>
+                <div className={s.HW8Name}>
+                    <span className={s.HW8NameStyle}>Name</span>
+                </div>
+                <div className={s.HW8Age}>
+                    <span className={s.HW8NameStyle}>Age</span>
+                </div>
 
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div>sort down</div>
-            check 18
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativePeople/>*/}
+                {finalPeople}
+            </div>
+            <div className={s.HW8ButtonContainer}>
+            <SuperButton className={styleCheckerSortUp} onClick={sortUp}>sort Up</SuperButton>
+            <SuperButton className={styleCheckerSortDown} onClick={sortDown}>sort Down</SuperButton>
+            <SuperButton className={styleCheckerSortAge} onClick={checkOnAge}>Check Age more 18</SuperButton>
+            </div>
             <hr/>
         </div>
     )
 }
+
 
 export default HW8

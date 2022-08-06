@@ -1,13 +1,171 @@
 .App {
-    color: coral;
-    background-image: url("SpacePhoto1.jpg");
+    color: #c1ca1e;
+    background-image: url("SpacePhoto.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    height: 1200px;
+    height: 1100px;
+    font-weight: normal;
+    padding-left: 30px;
+}
+
+.s {
+    background-color: green;
+    color: blue;
+    padding: 300px;
+}
+.homeWorks {
     font-weight: bolder;
+    padding: 20px;
+}
+.routs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    transition: 0.5s;
+    transform-origin: left center;
+    transform: scaleX(0) translateX(20%);
+    opacity: 0;
+}
+
+.routsBarTop {
+    display: flex;
+    padding-top: 10px;
+}
+
+.routsTitle {
+    display: inline-block;
+    text-decoration: none;
+    color:#fff;
+    margin-left: 10px;
+}
+
+.routsTitle:hover {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 2px;
+    transition: background .25s ease-out;
+    background-color: darkorange;
+}
+
+.HW8 {
+    width: 400px;
+    justify-content: left;
+    padding-top: 15px;
+}
+.HW8Name {
+    width: 100px;
+}
+
+.HW8Age {
+    margin-left: 200px;
+    width: 100px;
+    margin-top: -20px;
+    display: flex;
+    text-align: center;
+
+}
+
+.HW8NameStyle {
+    font-weight: bold;
+}
+
+.HW8ButtonStyle {
+    padding: 0px 5px 0px 0px;
+}
+
+.HW8ButtonContainer {
+    display: flex;
+    align-items: center;
+    padding-top: 5px
+}
+
+.HW8Red {
+    color: blue;
+}
+
+.routsBar {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.routsBarActive {
+    transition: 0.5s;
+    transform: scaleX(1) translateX(0%);
+    opacity: 1;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.routsTitleActiveNavBar {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 2px;
+    background-color: darkorange;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgScale {
+    width: 15px;
+    height: auto;
+    background-color: #8591ff;
+    padding-left: 20px;
+    border-radius: 7px;
+    display: flex;
+}
+
+.imgScale:hover {
+    width: 15px;
+    height: auto;
+    background-color: darkorange;
+    padding-left: 20px;
+    border-radius: 7px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: .3s;
+}
+
+.menuButtonLabel{
+    display: flex;
+}
+
+.menuBarText {
+    transition: 0.5s ease-out;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.menuBarTextActive {
+    font-weight: bold;
+    transition: 0.2s ease-out;
+    transform: scaleX(0) translateX(-20%);
+    margin-left: -170px;
+    /*display: none;*/
+}
+
+.menuBarText:hover {
+    font-weight: bold;
+    color: black;
+    transition: 0.25s ease-out;
+    background-color: darkorange;
+    border-radius: 4px;
+    /*width: 200px;*/
+    /*text-align: center;*/
+    /*display: none;*/
 }
 

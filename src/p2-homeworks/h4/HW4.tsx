@@ -18,22 +18,24 @@ function HW4() {
     }
     let [checked, setChecked] = useState<boolean>(false)
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-
+        setChecked(e.currentTarget.checked)
     }
+
 
 
     return (
         <div>
             <hr/>
-            homeworks 4
+            <div>homework 4</div>
 
+            <hr/>
             <div className={s.column}>
                 <SuperInputText
                     value={text}
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
-                    // spanClassName={s.testSpanError}
+                    spanClassName={s.testSpanError}
 
                 />
                 <SuperInputText

@@ -19,7 +19,7 @@ const Greeting: React.FC<GreetingPropsType> = (
     const inputClass = error ? s.superInput : s.errorInput // need to fix with (?:)
     return (
         <div>
-            <div>
+            <span>
                 <SuperInputText
                     value={name}
                     onChange={setNameCallback}
@@ -27,11 +27,15 @@ const Greeting: React.FC<GreetingPropsType> = (
                     onKeyDown={onEnter}
                     onBlur={setNameCallback}
                 />
-            </div>
-            {error && <div>{error}</div>}
-            <SuperButton onClick={addUser} disabled={!name}>add</SuperButton>
+            </span>
 
-            <div>{totalUsers}</div>
+            {error && <div>{error}</div>}
+            <div>
+           <span><SuperButton onClick={addUser} disabled={!name}>add</SuperButton></span><span >  Users: {totalUsers}</span>
+            </div>
+
+
+
         </div>
     )
 }

@@ -18,7 +18,7 @@ const HW1 = () => {
     return (
         <div>
             <hr/>
-            homeworks 1
+            homework 1
             <hr/>
             <Message
             tasks={tasks}

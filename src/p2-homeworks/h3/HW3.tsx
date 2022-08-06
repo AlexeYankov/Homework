@@ -22,8 +22,8 @@ function HW3() {
     return (
         <div>
             <hr/>
-            homeworks 3
-
+            homework 3
+            <hr/>
             {/*should work (должно работать)*/}
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>
 

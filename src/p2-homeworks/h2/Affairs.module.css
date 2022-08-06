@@ -10,13 +10,11 @@
 
 .userTaskName {
     color: bisque;
-    margin-left: 5px;
     grid-area: uTN;
     margin: 5px 15px 5px 15px;
     font-weight: bold;
 }
 .userTaskPriority {
-    margin-left: 20px;
     grid-area: uTP;
     margin: 5px 15px 5px 15px;
 
@@ -31,13 +29,4 @@
     margin: 5px 15px 5px 15px;
     border-radius: 3px;
 }
-.nonActiveFilter {
-    background-color: white;
-    margin: 10px 0px 0px 5px;
-    border-radius: 6px;
-}
-.activFilter {
-    bbackground-color: darkorange;
-    margin: 10px 0px 0px 5px;
-    border-radius: 6px;
-}
+

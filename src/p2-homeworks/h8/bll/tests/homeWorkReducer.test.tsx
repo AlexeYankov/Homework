@@ -1,7 +1,8 @@
 import React from 'react'
 import {homeWorkReducer} from '../homeWorkReducer'
+import {UserDataType} from "../../HW8";
 
-let initialState: any[] // need to fix any
+let initialState: UserDataType[] // need to fix any
 
 beforeEach(() => {
     initialState = [
