@@ -8,7 +8,6 @@ function HW4() {
     const [text, setText] = useState<string>('')
     const error = text ? '' : 'Please, enter some text'
     const showAlert = () => {
-        hello
         if (error) {
             alert('text is not entered')
 
