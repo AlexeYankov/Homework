@@ -6,16 +6,24 @@ import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
 function HW4() {
     const [text, setText] = useState<string>('')
-    const error = text ? '' : 'Please, enter some text'
+    const errorMessage = text ? '' : 'error'
+    let error = false
+    if (text === '') {
+        error = true
+    }
+    else {
+        error = false
+    }
     const showAlert = () => {
         if (error) {
-            alert('text is not entered')
+            alert('Please, enter some text')
 
         } else {
-            alert(text)
-            setText('')// если нет ошибки показать текст
+            alert(text)// если нет ошибки показать текст
         }
     }
+
+
     let [checked, setChecked] = useState<boolean>(false)
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => {
         setChecked(e.currentTarget.checked)
@@ -27,8 +35,6 @@ function HW4() {
         <div>
             <hr/>
             <div>homework 4</div>
-
-            <hr/>
             <div className={s.column}>
                 <SuperInputText
                     value={text}
@@ -36,6 +42,7 @@ function HW4() {
                     onEnter={showAlert}
                     error={error}
                     spanClassName={s.testSpanError}
+                    errorMessage={errorMessage}
 
                 />
                 <SuperInputText

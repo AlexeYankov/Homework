@@ -8,7 +8,7 @@ type GreetingPropsType = {
     setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any
     onEnter: (e: KeyboardEvent<HTMLInputElement>) => void // need to fix any
     addUser: () => void // need to fix any
-    error: string // need to fix any
+    error: boolean // need to fix any
     totalUsers: number // need to fix any
 }
 
@@ -16,9 +16,10 @@ type GreetingPropsType = {
 const Greeting: React.FC<GreetingPropsType> = (
     {name, setNameCallback, addUser, error, totalUsers, onEnter} // деструктуризация пропсов
 ) => {
-    const inputClass = error ? s.superInput : s.errorInput // need to fix with (?:)
+    const errorMessage = "Input cant be empty!"
+    const inputClass = error ? s.errorInput : s.superInput // need to fix with (?:)
     return (
-        <div>
+        <div style={{paddingTop: '10px'}}>
             <span>
                 <SuperInputText
                     value={name}
@@ -26,12 +27,13 @@ const Greeting: React.FC<GreetingPropsType> = (
                     className={inputClass}
                     onKeyDown={onEnter}
                     onBlur={setNameCallback}
+                    error={error}
                 />
             </span>
 
-            {error && <div>{error}</div>}
+            {error && <div>{errorMessage}</div>}
             <div>
-           <span><SuperButton onClick={addUser} disabled={!name}>add</SuperButton></span><span >  Users: {totalUsers}</span>
+           <span><SuperButton onClick={addUser} disabled={!name}>add</SuperButton></span><span>  Users: {totalUsers}</span>
             </div>
 
 

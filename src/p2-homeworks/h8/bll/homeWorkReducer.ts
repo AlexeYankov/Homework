@@ -3,45 +3,51 @@ import {UserDataType} from "../HW8"
 export const homeWorkReducer = (state: UserDataType[], action: ReduceSortCheckType): UserDataType[]=> { // need to fix any
     switch (action.type) {
         case 'sort': {
-            if (action.payload === 'up') {
-                const sortUp = [...state]
-                const sortStater = sortUp.sort((a, b)=>a.name>b.name ? 1 : -1)
-                return sortStater
+            if (action.payload.type === 'up') {
+                return action.payload.initialPeople.sort((a, b)=>a.name>b.name ? 1 : -1)
             }
-            if (action.payload === 'down') {
-                const sortDown = [...state]
-                const sortStateDown = sortDown.sort((a, b)=>a.name>b.name ? -1 : 1)
-                return sortStateDown
+            if (action.payload.type === 'down') {
+                return action.payload.initialPeople.sort((a, b)=>a.name>b.name ? -1 : 1)
             }
         }
         case 'check': {
-            return state.filter(o=>o.age >= action.payload)
+            return action.payload.initialPeople.filter(o=>o.age >= action.payload.type)
         }
         default: return state
+
     }
 }
 
 export type ReduceSortCheckType = SortUpACType | SortDownACType | CheckAgeACType
 
 type  SortUpACType = ReturnType<typeof sortUpAC>
-export const sortUpAC = () => {
+export const sortUpAC = (initialPeople: UserDataType[]) => {
     return {
         type: 'sort',
-        payload: 'up'
+        payload: {
+            type: 'up',
+            initialPeople
+        }
     } as const
 }
 type  SortDownACType = ReturnType<typeof sortDownAC>
-export const sortDownAC = () => {
+export const sortDownAC = (initialPeople: UserDataType[]) => {
     return {
         type: 'sort',
-        payload: 'down'
+        payload: {
+            type: 'down',
+            initialPeople
+        }
     } as const
 }
 type  CheckAgeACType = ReturnType<typeof checkAgeAC>
-export const checkAgeAC = () => {
+export const checkAgeAC = (initialPeople: UserDataType[]) => {
     return {
         type: 'check',
-        payload: 18
+        payload: {
+            type: 18,
+            initialPeople
+        }
     } as const
 }
 

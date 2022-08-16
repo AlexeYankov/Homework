@@ -50,7 +50,7 @@ function Affairs(props: AffairsPropsType) {
     const styleCheckerAll = style === 'active all' ? r.activeFilter : s.nonActiveFilter
 
     return (
-        <div>
+        <div style={{paddingTop: '10px'}}>
             {mappedAffairs}
             <div className={s.HW8ButtonContainer}>
                 <SuperButton className={styleCheckerAll} onClick={setAll}>All</SuperButton>

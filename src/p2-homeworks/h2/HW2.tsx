@@ -39,7 +39,6 @@ function HW2() {
         <div>
             <hr/>
             homework 2
-            <hr/>
             <Affairs
                 data={filteredAffairs}
                 filter={filter}

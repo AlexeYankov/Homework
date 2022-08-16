@@ -10,7 +10,7 @@ type messageData = {
 
 function Message(props: messageData) {
     return (
-        <div>
+        <div style={{paddingTop: '10px'}}>
             <div className={styleCss.userPost}>
                 <div className={styleCss.userAvatar}>
                     <img src={props.tasks.avatar} alt="avatar must be here"/>

@@ -10,7 +10,7 @@ export type UserDataType = {
     age: number
 }
 
-let initialPeople = [
+const initialPeople = [
     {_id: 0, name: 'Кот', age: 3},
     {_id: 1, name: 'Александр', age: 66},
     {_id: 2, name: 'Коля', age: 16},
@@ -23,22 +23,22 @@ function HW8() {
     const [styleState, setStyle] = useState('')
     const [people, dispatchPeople] = useReducer(homeWorkReducer, initialPeople) // need to fix any
     const finalPeople = people.map((p: UserDataType) => (
-        <div key={p._id}>
+        <div className={s.HW8Board} key={p._id}>
             <span className={s.HW8Name}>{p.name}</span>
             <span className={s.HW8Age}>{p.age}</span>
         </div>
     ))
 
     const sortUp = () => {
-        dispatchPeople(sortUpAC())
+        dispatchPeople(sortUpAC(initialPeople))
         setStyle('sort Up')
     }
     const sortDown = () => {
-        dispatchPeople(sortDownAC())
+        dispatchPeople(sortDownAC(initialPeople))
         setStyle('sort Down')
     }
     const checkOnAge = () => {
-        dispatchPeople(checkAgeAC())
+        dispatchPeople(checkAgeAC(initialPeople))
         setStyle('sort Age')
     }
 

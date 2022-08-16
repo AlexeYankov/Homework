@@ -1,13 +1,13 @@
-/*.superInput {*/
-/*    background-color: blue;*/
-/*}*/
+.superInput {
+    background-color: white;
+    /*border-bottom: 4px solid green;*/
+}
 
-/*.errorInput {*/
-/*    background-color: red;*/
-/*    border: 2px solid lime;*/
-/*}*/
+.errorInput {
+    background-color: red;
+    border: 2px solid lime;
+}
 
-/*.error {*/
-/*    color: white;*/
-/*    background-color: green;*/
-/*}*/
+.error {
+    color: red;
+}
