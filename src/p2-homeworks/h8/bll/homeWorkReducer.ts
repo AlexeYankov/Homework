@@ -2,14 +2,13 @@ import {UserDataType} from "../HW8"
 
 export const homeWorkReducer = (state: UserDataType[], action: ReduceSortCheckType): UserDataType[]=> { // need to fix any
     switch (action.type) {
-        case 'sort': {
-            if (action.payload.type === 'up') {
-                return action.payload.initialPeople.sort((a, b)=>a.name>b.name ? 1 : -1)
-            }
-            if (action.payload.type === 'down') {
+        case 'sort-up': {
+            return action.payload.initialPeople.sort((a, b) => a.name > b.name ? 1 : -1)
+        }
+        case 'sort-down':
+        {
                 return action.payload.initialPeople.sort((a, b)=>a.name>b.name ? -1 : 1)
             }
-        }
         case 'check': {
             return action.payload.initialPeople.filter(o=>o.age >= action.payload.type)
         }
@@ -23,9 +22,8 @@ export type ReduceSortCheckType = SortUpACType | SortDownACType | CheckAgeACType
 type  SortUpACType = ReturnType<typeof sortUpAC>
 export const sortUpAC = (initialPeople: UserDataType[]) => {
     return {
-        type: 'sort',
+        type: 'sort-up',
         payload: {
-            type: 'up',
             initialPeople
         }
     } as const
@@ -33,9 +31,8 @@ export const sortUpAC = (initialPeople: UserDataType[]) => {
 type  SortDownACType = ReturnType<typeof sortDownAC>
 export const sortDownAC = (initialPeople: UserDataType[]) => {
     return {
-        type: 'sort',
+        type: 'sort-down',
         payload: {
-            type: 'down',
             initialPeople
         }
     } as const

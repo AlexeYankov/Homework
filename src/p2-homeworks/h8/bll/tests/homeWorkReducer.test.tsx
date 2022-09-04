@@ -1,5 +1,5 @@
 import React from 'react'
-import {homeWorkReducer} from '../homeWorkReducer'
+import {homeWorkReducer, sortDownAC, sortUpAC} from '../homeWorkReducer'
 import {UserDataType} from "../../HW8";
 
 let initialState: UserDataType[] // need to fix any
@@ -16,17 +16,27 @@ beforeEach(() => {
 })
 
 test('sort name up', () => {
-    const newState = homeWorkReducer(initialState, {type: 'sort', payload: {type: 'up', initialPeople: initialState}})
+    const newState = homeWorkReducer(initialState, sortUpAC(initialState))
 
     expect(newState[0].name).toBe('Александр')
+    expect(newState[1].name).toBe('Виктор')
+    expect(newState[5].name).toBe('Кот')
+    expect(newState.length).toBe(6)
 })
 test('sort name down', () => {
-    const newState = homeWorkReducer(initialState, {type: 'sort', payload: {type: 'down', initialPeople: initialState}})
+    const newState = homeWorkReducer(initialState, sortDownAC(initialState))
 
+    expect(newState[0].name).toBe('Кот')
+    expect(newState[1].name).toBe('Коля')
+    expect(newState.length).toBe(6)
 
 })
 test('check age 18', () => {
     const newState = homeWorkReducer(initialState, {type: 'check', payload: {type: 18, initialPeople: initialState}})
+    const a = initialState.filter(e => e.age > 18)
+    const b = a.map(e=>e.age).join('') == newState.map(e=>e.age).join('') ? true : false
 
+    expect(b).toBe(true)
+    expect(newState.length).toBe(4)
 
 })

@@ -3,7 +3,7 @@ const initState = a
 
 
 
-export const loadingReducer = (state = initState, action: reduceACType): any => { // fix any
+export const loadingReducer = (state = initState, action: reduceACType): boolean => { // fix any
     switch (action.type) {
         case 'LOADING': {
             return (!state)

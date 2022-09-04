@@ -1,6 +1,6 @@
 import {loadingReducer} from './loadingReducer'
 import {combineReducers} from "redux";
-import { legacy_createStore as createStore} from 'redux'
+import {createStore} from 'redux'
 
 const reducers = combineReducers({
     loading: loadingReducer,

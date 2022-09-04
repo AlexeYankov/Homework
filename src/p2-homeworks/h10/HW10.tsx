@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "./bll/store";
 import {loadingAC} from "./bll/loadingReducer";
 import s from "./bll/loading.module.css"
+import pic from "./bll/gooey-balls-2.svg"
 
 function HW10() {
     const loading = useSelector<AppStoreType, boolean>(state => state.loading)
@@ -24,14 +25,15 @@ function HW10() {
                 ? (
                     <div>
                         <div className={s.center}>
-                            <div className={s.ring}>
-                            </div>
+                            <img style={{scale: '1.5', margin: '10px'}} className={s.ring} src={pic} alt="hereMustBePicture"/>
                             <span className={s.span1}>loading...</span>
                         </div>
                     </div>
                 ) : (
                     <div className={s.buttons}>
-                        <SuperButton onClick={setLoading} >set loading...</SuperButton>
+                        <SuperButton onClick={setLoading}>
+                            set loading...
+                        </SuperButton>
                     </div>
                 )
             }
