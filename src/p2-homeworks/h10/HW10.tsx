@@ -15,7 +15,7 @@ function HW10() {
     const setLoading = () => {
         dispatch(loadingAC())
         const b = () => dispatch(loadingAC())
-        setTimeout(b, 2000)
+        setTimeout(b, 5000)
     };
     return (
         <div>
@@ -25,7 +25,7 @@ function HW10() {
                 ? (
                     <div>
                         <div className={s.center}>
-                            <img style={{scale: '1.5', margin: '10px'}} className={s.ring} src={pic} alt="hereMustBePicture"/>
+                            <img className={s.ring} src={pic} alt="loading"/>
                             <span className={s.span1}>loading...</span>
                         </div>
                     </div>
