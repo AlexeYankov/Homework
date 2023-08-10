@@ -17,12 +17,12 @@ function HW10() {
         setTimeout(b, 5000);
     };
     return (
-        <div>
+        <div id={"hw10"}>
             <div className={s2.hwTitle}>Hometask № 10</div>
             <hr />
             <div className={s2.hw}>
                 {loading ? (
-                    <div>
+                    <div id={"hw10-loading"}>
                         <div className={s.center}>
                             <img className={s.ring} src={pic} alt="loading" />
                             <span className={s.span1}>loading...</span>
@@ -30,11 +30,13 @@ function HW10() {
                     </div>
                 ) : (
                     <div className={s.buttons}>
-                        <SuperButton onClick={setLoading}>set loading...</SuperButton>
+                        <SuperButton id={"hw10-button-start-loading"} onClick={setLoading}>
+                            set loading...
+                        </SuperButton>
                     </div>
                 )}
             </div>
-            <hr/>
+            <hr />
         </div>
     );
 }
