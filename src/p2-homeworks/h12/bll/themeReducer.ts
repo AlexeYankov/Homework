@@ -1,12 +1,12 @@
-type InitialStateType = {
-    themes: string
+export type ThemeType = {
+    themes: number
 }
 
-const initState = {
-    themes: "dark"
+const initState: ThemeType = {
+    themes: 3
 };
 
-export const themeReducer = (state = initState, action: SetAppThemeActionType): InitialStateType => { // fix any
+export const themeReducer = (state = initState, action: SetAppThemeActionType): ThemeType => { // fix any
     switch (action.type) {
         case "change-themes": {
             return {...state, themes: action.el}
@@ -15,9 +15,9 @@ export const themeReducer = (state = initState, action: SetAppThemeActionType): 
     }
 };
 
-export type SetAppThemeActionType = ReturnType<typeof changeThemeC>
+export type SetAppThemeActionType = ReturnType<typeof changeThemeAC>
 
-export const changeThemeC = (el: string) => {
+export const changeThemeAC = (el: number) => {
     return {
         type: "change-themes",
         el

@@ -1,42 +1,51 @@
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, useState} from 'react'
-import s from  "../../styles.module.css";
+import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, useState} from "react";
+import s from "../../styles.module.css";
 
 // тип пропсов обычного инпута
-type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+type DefaultInputPropsType = DetailedHTMLProps<
+    InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+>;
 
 type SuperDoubleRangePropsType = DefaultInputPropsType & {
-    onChangeRange?: (value: number) => void
-    onChangeRange1?: (value: number) => void
-    valueMax: number
-    valueMin: number
+    onChangeRange?: (value: number) => void;
+    onChangeRangeMax?: (value: number) => void;
+    valueMax: number;
+    valueMin: number;
     // disabled?:string
     // min, max, step, disable, ...
-}
+};
 
-const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
-    {
-        type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
-        onChange, onChangeRange,onChangeRange1, className, valueMin, valueMax,
-        value,min, max,
-        step, disabled,
+const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = ({
+    type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
+    onChange,
+    onChangeRange,
+    onChangeRangeMax,
+    className,
+    valueMin,
+    valueMax,
+    value,
+    min,
+    max,
+    step,
+    disabled,
 
-        ...restProps// все остальные пропсы попадут в объект restProps
-        // min, max, step, disable, ...
-    }
-) => {
+    ...restProps // все остальные пропсы попадут в объект restProps
+    // min, max, step, disable, ...
+}) => {
     // сделать самому, можно подключать библиотеки
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange && onChange(e) // сохраняем старую функциональность
+        onChange && onChange(e); // сохраняем старую функциональность
 
-        onChangeRange && onChangeRange(+e.currentTarget.value)
-    }
+        onChangeRange && onChangeRange(+e.currentTarget.value);
+    };
     const onChangeCallback1 = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange && onChange(e) // сохраняем старую функциональность
+        onChange && onChange(e); // сохраняем старую функциональность
 
-        onChangeRange1 && onChangeRange1(+e.currentTarget.value)
-    }
+        onChangeRangeMax && onChangeRangeMax(+e.currentTarget.value);
+    };
 
-    const finalRangeClassName = `${s.range} ${className ? className : ''}`
+    const finalRangeClassName = `${s.range} ${className ? className : ""}`;
 
     return (
         <>
@@ -50,6 +59,39 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
                             onChange={onChangeCallback}
                         />
                     </div>
+                </div>
+                <div className={s.sliderWrapper}>
+                    <div className={s.slider}>
+                        <div
+                            className={s.progress}
+                            style={{
+                                left: `${valueMin + "%"}`,
+                                right: `${100 - valueMax + "%"}`,
+                            }}></div>
+                    </div>
+
+                    <div className={s.rangeInput}>
+                        <input
+                            type="range"
+                            className={s.rangeMin}
+                            min={0}
+                            max={100}
+                            value={valueMin}
+                            onChange={onChangeCallback}
+                            {...restProps}
+                        />
+                        <input
+                            type="range"
+                            className={s.rangeMin}
+                            min={0}
+                            max={100}
+                            value={valueMax}
+                            onChange={onChangeCallback1}
+                            {...restProps}
+                        />
+                    </div>
+                </div>
+                <div className={s.priceInput}>
                     <div className={s.field}>
                         <input
                             type="number"
@@ -59,34 +101,9 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
                         />
                     </div>
                 </div>
-                <div className={s.slider}>
-                    <div className={s.progress} style={{left: `${valueMin + '%'}`, right: `${100 - valueMax + '%'}`}}></div>
-                </div>
-                <div className={s.rangeInput}>
-                    <input
-                        type="range"
-                        className={s.rangeMin}
-                        min={0}
-                        max={100}
-                        value={valueMin}
-                        onChange={onChangeCallback}
-
-                        {...restProps}
-                    />
-                    <input
-                        type="range"
-                        className={s.rangeMin}
-                        min={0}
-                        max={100}
-                        value={valueMax}
-                        onChange={onChangeCallback1}
-
-                        {...restProps}
-                    />
-                </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default SuperDoubleRange
+export default SuperDoubleRange;

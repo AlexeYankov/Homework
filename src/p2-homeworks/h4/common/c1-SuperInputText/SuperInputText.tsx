@@ -1,6 +1,6 @@
 // noinspection LanguageDetectionInspection
 
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent} from 'react'
+import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent, ReactNode} from 'react'
 import s from './SuperInputText.module.css'
 
 // тип пропсов обычного инпута
@@ -12,7 +12,7 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 type SuperInputTextPropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
     onChangeText?: (value: string) => void
     onEnter?: () => void
-    error?: boolean
+    error?: ReactNode
     spanClassName?: string
     className?: string
     errorMessage?: string

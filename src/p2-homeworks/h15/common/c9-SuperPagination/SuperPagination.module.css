@@ -1,0 +1,22 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    top: 20px;
+}
+.paginationPages {
+    display: flex;
+    width: 200px;
+    /* border: 2px solid red; */
+}
+
+.text1 {
+
+}
+
+.text2 {
+
+}
+.select {
+    /* padding: 10px 0px; */
+}

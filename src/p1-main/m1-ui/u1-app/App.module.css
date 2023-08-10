@@ -1,15 +1,16 @@
 .App {
-    color: #c1ca1e;
+    /* color: #c1ca1e;
     background-image: url("SpacePhoto.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
+    -o-background-size: cover; */
     height: 100vh;
     font-weight: normal;
     padding-left: 30px;
+    --header_height: 60px;
 
 }
 
@@ -22,6 +23,16 @@
     font-weight: bolder;
     padding: 20px;
 }
+.hw {
+    position: relative;
+    /* top: 60px; */
+    min-height: 300px;
+}
+.hw:last-child {
+    position: relative;
+    top: 30px;
+    min-height: 300px;
+}
 .routs {
     display: flex;
     justify-content: center;
@@ -32,6 +43,12 @@
     transform-origin: left center;
     transform: scaleX(0) translateX(20%);
     opacity: 0;
+}
+.hwTitle {
+    font-size: 30px;
+    padding: 25px 30px 30px 30px;
+    font-weight: bold;
+
 }
 
 .routsBarTop {

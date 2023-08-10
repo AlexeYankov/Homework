@@ -1,52 +1,70 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+*:focus {
+    outline: none;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 .HW11 {
     font-family: sans-serif;
 }
 
 .wrapperHW11 {
-    width: 400px;
-    background-color: darkslategrey;
+    display: flex;
+    width: 250px;
     border-radius: 10px;
-    padding: 20px 25px 40px;
+    padding: 20px 20px;
 }
 
 .priceInput {
-    margin: 30px 0 30px;
     display: flex;
-    width: 100%;
 }
 .field {
-    height: 30px;
     display: flex;
-    width: 100%;
     align-items: center;
 }
 
+.sliderWrapper {
+    min-width: 150px;
+}
+
 .inputMax {
     width: 100%;
     height: 100%;
-    border: 1px solid #999;
-    font-size: 19px;
+    font-size: 16px;
+    font-weight: 700;
     text-align: center;
-    border-radius: 5px;
+    border: none;
+    background-color: var(--background);
+}
+.inputMax1 {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    visibility: hidden;
 }
 .inputMin {
     width: 100%;
     height: 100%;
-    border: 1px solid #999;
-    font-size: 19px;
+    font-size: 16px;
+    font-weight: 700;
     text-align: center;
-    border-radius: 5px;
-}
-
-.inputMin {
-    border: 2px solid red;
-}
-
-.inputMax {
-    border: 2px solid red;
+    border: none;
+    background-color: var(--background);
 }
 
 .slider {
+    top: calc(50% - 2.5px);
+    width: 100%;
     height: 5px;
     border-radius: 5px;
     background: #ddd;
@@ -54,8 +72,6 @@
 }
 .progress {
     height: 100%;
-    /*left: 25%;*/
-    /*right: 25%;*/
     position: absolute;
     background: #869abd;
 }
@@ -84,6 +100,8 @@
     display: none;
 }
 input[type="range"]::-webkit-slider-thumb {
+    position: relative;
+    top: 7.5px;
     height: 20px;
     width: 20px;
     border-radius: 50%;
