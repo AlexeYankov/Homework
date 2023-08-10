@@ -1,17 +1,11 @@
-import React from 'react'
-import Header from './Header'
-import Pages from './Pages'
+import Pages from "./Pages";
 
 function HW5() {
     return (
         <div>
-
-            <Header/>
-
-            <Pages/>
-
+            <Pages />
         </div>
-    )
+    );
 }
 
-export default HW5
+export default HW5;

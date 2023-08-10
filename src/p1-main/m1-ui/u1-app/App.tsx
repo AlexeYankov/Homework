@@ -39,13 +39,13 @@ function App() {
             </div>
 
             <HW5/>
-            <Routes>
+            {/* <Routes>
                 <Route path={'/*'} element={''}/>
                 <Route path={'/'} element={''}/>
                 <Route path={'/pre-junior'} element={''}/>
                 <Route path={'/junior'} element={''}/>
                 <Route path={'/junior-plus'} element={''}/>
-            </Routes>
+            </Routes> */}
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Header() {
+export function Header() {
     return (
         <div>
             {/*// add NavLinks*/}
@@ -9,4 +9,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Header;
