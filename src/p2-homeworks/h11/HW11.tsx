@@ -30,16 +30,15 @@ function HW11() {
             <div className={s2.hwTitle}>Hometask № 11</div>
             <hr />
             <div className={s2.hw}>
-                <span id={"hw11-value"} className={s.number}>
+                {/* <span id={"hw11-value"} className={s.number}>
                     {connectState}
-                </span>
+                </span> */}
                 <SuperRange
                     id={"hw11-single-slider"}
                     // onChange={(va)=>value1Checker(+va.currentTarget.value)}
                     valueMin={connectState}
                     onChangeRange={(val) => valueMainMinChecker(val)}
                 />
-                <span id={'hw11-value-1'} className={s.number}>{connectState}</span>
                 <SuperDoubleRange
                     id={"hw11-double-slider"}
                     onChangeRange={(val) => valueMainMinChecker(val)}
@@ -47,7 +46,7 @@ function HW11() {
                     valueMax={connectStateMax}
                     valueMin={connectState}
                 />
-                <span id={'hw11-value-2'} className={s.number}>{connectStateMax}</span>
+                {/* <span id={'hw11-value-2'} className={s.number}>{connectStateMax}</span> */}
             </div>
             <hr />
         </div>
