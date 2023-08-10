@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Homeworks/static/css/main.cf4e069d.css",
-    "main.js": "/Homeworks/static/js/main.9448f905.js",
-    "static/media/Error404.jpg": "/Homeworks/static/media/Error404.65e9da3cb915410688b5.jpg",
-    "static/media/200.svg": "/Homeworks/static/media/200.96248f7df0dde10e0a82ac30418f50bc.svg",
-    "static/media/error.svg": "/Homeworks/static/media/error.5a3135f381b00b53044eff200e725391.svg",
-    "static/media/500.svg": "/Homeworks/static/media/500.adbc5f265f6f3c1fb9c5633ffe365afa.svg",
-    "static/media/400.svg": "/Homeworks/static/media/400.8baa1b795048b6fa13ff8d30800aa1b1.svg",
-    "static/media/gooey-balls-2.svg": "/Homeworks/static/media/gooey-balls-2.f2d85eaf22050d3aef8c8dc959300e3f.svg",
-    "index.html": "/Homeworks/index.html",
-    "static/media/angles-right-solid.svg": "/Homeworks/static/media/angles-right-solid.0b9c86ad67909db6832099fc4d655966.svg",
-    "main.cf4e069d.css.map": "/Homeworks/static/css/main.cf4e069d.css.map",
-    "main.9448f905.js.map": "/Homeworks/static/js/main.9448f905.js.map"
+    "main.css": "/Homework/static/css/main.019b575f.css",
+    "main.js": "/Homework/static/js/main.301ce07d.js",
+    "static/media/Error404.jpg": "/Homework/static/media/Error404.65e9da3cb915410688b5.jpg",
+    "static/media/200.svg": "/Homework/static/media/200.96248f7df0dde10e0a82ac30418f50bc.svg",
+    "static/media/error.svg": "/Homework/static/media/error.5a3135f381b00b53044eff200e725391.svg",
+    "static/media/500.svg": "/Homework/static/media/500.adbc5f265f6f3c1fb9c5633ffe365afa.svg",
+    "static/media/400.svg": "/Homework/static/media/400.8baa1b795048b6fa13ff8d30800aa1b1.svg",
+    "static/media/gooey-balls-2.svg": "/Homework/static/media/gooey-balls-2.f2d85eaf22050d3aef8c8dc959300e3f.svg",
+    "static/media/angles-right-solid.svg": "/Homework/static/media/angles-right-solid.0b9c86ad67909db6832099fc4d655966.svg",
+    "index.html": "/Homework/index.html",
+    "main.019b575f.css.map": "/Homework/static/css/main.019b575f.css.map",
+    "main.301ce07d.js.map": "/Homework/static/js/main.301ce07d.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf4e069d.css",
-    "static/js/main.9448f905.js"
+    "static/css/main.019b575f.css",
+    "static/js/main.301ce07d.js"
   ]
 }
