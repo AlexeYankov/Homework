@@ -2,7 +2,7 @@
   "name": "simple-react-homeworks",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alexeyankov.github.io/Homework/",
+  "homepage": "https://alexeyankov.github.io/junior-plus/",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
