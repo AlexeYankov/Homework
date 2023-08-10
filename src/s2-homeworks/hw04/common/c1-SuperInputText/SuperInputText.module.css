@@ -1,0 +1,30 @@
+
+input {
+    padding-left: 10px;
+    width: 450px;
+    height: 25px;
+    border-radius: 9px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+input:focus{
+    border: 3px #58ACFF solid;
+    outline: none;
+}
+
+
+.inputWrapper {
+}
+
+.superInput {
+}
+
+.errorInput {
+}
+
+.errorInput:focus {
+}
+
+.error {
+}

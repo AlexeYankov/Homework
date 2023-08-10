@@ -1,23 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import "./index.css";
-import { HashRouter } from 'react-router-dom'
-import App from "./p1-main/m1-ui/u1-app/App";
-import * as serviceWorker from "./serviceWorker";
-import {BrowserRouter} from "react-router-dom";
+import App from "./s1-main/App";
+import reportWebVitals from "./reportWebVitals";
+import store from "./s2-homeworks/hw10/bll/store";
 import {Provider} from "react-redux";
-import store from "./p2-homeworks/h10/bll/store";
 
-ReactDOM.render(
-    <HashRouter>
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+root.render(
+    <React.StrictMode>
         <Provider store={store}>
-                <App />
+            <App />
         </Provider>
-    </HashRouter>,
-    document.getElementById("root")
+    </React.StrictMode>
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
